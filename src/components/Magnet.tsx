@@ -1,4 +1,5 @@
-import { useState, useRef, ReactNode, MouseEvent, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { ReactNode } from 'react';
 
 interface MagnetProps {
   children: ReactNode;
