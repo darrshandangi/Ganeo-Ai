@@ -18,9 +18,9 @@ function App() {
   }, []);
 
   return (
-    <main className="overflow-x-clip bg-[#0C0C0C] min-h-screen pt-20 pb-16">
+    <main className="overflow-x-clip bg-[#0C0C0C] min-h-screen pt-24 pb-16">
       {/* Fixed View Switcher Navigation Pill */}
-      <div className="fixed top-3 left-1/2 -translate-x-1/2 z-[100] px-3 py-1.5 rounded-full bg-neutral-900/95 border border-amber-500/30 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] flex items-center gap-1.5 text-xs font-medium">
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] px-3 py-1.5 rounded-full bg-neutral-900/95 border border-amber-500/30 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] flex items-center gap-1.5 text-xs font-medium">
         <button
           onClick={() => setCurrentView('onboarding')}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
