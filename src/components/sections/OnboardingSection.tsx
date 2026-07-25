@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, User, MapPin, Mail, Phone, MessageSquare, TrendingUp, HelpCircle, Loader2, Sparkles } from 'lucide-react';
+import { Send, User, MapPin, Mail, Phone, MessageSquare, TrendingUp, FileText, CheckCircle2, Star, Award, Lock, Loader2 } from 'lucide-react';
 import { submitOnboardingForm, isSupabaseConfigured } from '../../lib/supabase';
 import type { OnboardingData } from '../../lib/supabase';
 import { ThankYouCard } from './ThankYouCard';
@@ -12,7 +12,7 @@ export const OnboardingSection: React.FC = () => {
     email: '',
     phone: '',
     preferred_communication: 'whatsapp',
-    avg_monthly_sales: '$10,000 - $50,000',
+    avg_monthly_sales: '$10,000 - $50,000 / month',
     additional_notes: '',
   });
 
@@ -51,188 +51,272 @@ export const OnboardingSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-[#0C0C0C] text-white flex items-center justify-center overflow-hidden">
-      {/* Dynamic light glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-900/20 via-blue-900/20 to-emerald-900/10 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-[#09090b] text-neutral-100 font-sans selection:bg-amber-500 selection:text-black">
+      {/* Gold & Soft Amber Glow Accents */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-amber-500/10 via-amber-600/5 to-transparent blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-3xl relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         {!isSubmitted ? (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-neutral-900/90 border border-neutral-800/80 p-6 sm:p-10 backdrop-blur-2xl shadow-2xl"
+            transition={{ duration: 0.5 }}
+            className="space-y-8"
           >
-            {/* Header Header */}
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-purple-300 mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Onboarding Form</span>
+            {/* Top Brand Header & Hero Banner */}
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/30 text-xs font-semibold uppercase tracking-wider text-amber-400">
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <span>Client Onboarding Portal</span>
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               </div>
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
-                Client Onboarding Details
+
+              <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-serif leading-tight">
+                Welcome To <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent">Ganeo AI</span>
               </h1>
-              <p className="mt-3 text-base sm:text-lg text-neutral-400 max-w-xl mx-auto">
-                Welcome aboard! Please provide your business details below to customize your growth strategy.
+
+              <p className="text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+                Congratulations on completing your onboarding! Please fill in your primary details below so our marketing and AI execution team can set minimum standards and build your customized growth roadmap.
               </p>
-              {!isSupabaseConfigured && (
-                <div className="mt-4 p-3 text-xs rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 max-w-md mx-auto">
-                  ℹ️ Demo Mode: Connected with local fallback logic (Supabase env vars can be added anytime).
-                </div>
-              )}
             </div>
 
+            {/* Feature Video / Intro Banner Card */}
+            <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/60 backdrop-blur-md shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6">
+              <div className="relative w-full sm:w-1/2 aspect-video rounded-xl overflow-hidden bg-neutral-950 border border-amber-500/20 flex items-center justify-center group">
+                <iframe
+                  className="w-full h-full object-cover pointer-events-auto"
+                  src="https://www.youtube.com/embed/kTboMapntM0?autoplay=0&mute=1&controls=1"
+                  title="Ganeo AI Onboarding Welcome"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              <div className="w-full sm:w-1/2 space-y-3">
+                <div className="flex items-center gap-2 text-amber-400 text-sm font-semibold">
+                  <Award className="w-4 h-4" />
+                  <span>Next Steps After Submission</span>
+                </div>
+                <ul className="space-y-2 text-sm text-neutral-300">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Your account details & primary channel setup</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Minimum sales benchmarking for targeted ROI</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Dedicated 1-on-1 strategy kickoff session</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {!isSupabaseConfigured && (
+              <div className="p-3 text-xs rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-center">
+                ℹ️ Demo Mode: Connected with local fallback logic (Supabase env vars can be added anytime in `.env.local`).
+              </div>
+            )}
+
             {errorMessage && (
-              <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm text-center">
                 {errorMessage}
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Full Name & Email grid */}
+            {/* Main Form Container */}
+            <form onSubmit={handleSubmit} className="rounded-3xl bg-neutral-900/90 border border-neutral-800 p-6 sm:p-10 shadow-2xl space-y-6">
+              <div className="border-b border-neutral-800 pb-4 mb-2">
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-amber-400" />
+                  <span>Client Details Intake</span>
+                </h2>
+                <p className="text-xs text-neutral-400 mt-1">Fields marked with <span className="text-amber-400">*</span> are mandatory.</p>
+              </div>
+
+              {/* Grid 1: Full Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                    <User className="w-4 h-4 text-purple-400" />
-                    Full Name <span className="text-purple-400">*</span>
+                  <label className="block text-sm font-medium text-neutral-200 mb-2">
+                    Full Name <span className="text-amber-400">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="full_name"
-                    required
-                    value={formData.full_name}
-                    onChange={handleChange}
-                    placeholder="e.g. Sarah Jenkins"
-                    className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm"
-                  />
+                  <div className="relative">
+                    <User className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      name="full_name"
+                      required
+                      value={formData.full_name}
+                      onChange={handleChange}
+                      placeholder="e.g. Rahul Sharma"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                    <Mail className="w-4 h-4 text-purple-400" />
-                    Email Address <span className="text-purple-400">*</span>
+                  <label className="block text-sm font-medium text-neutral-200 mb-2">
+                    Email Address <span className="text-amber-400">*</span>
                   </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="sarah@yourcompany.com"
-                    className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm"
-                  />
+                  <div className="relative">
+                    <Mail className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="rahul@company.com"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Phone & Business Address grid */}
+              {/* Grid 2: Phone & Business Address */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                    <Phone className="w-4 h-4 text-purple-400" />
-                    Phone Number <span className="text-purple-400">*</span>
+                  <label className="block text-sm font-medium text-neutral-200 mb-2">
+                    Phone Number <span className="text-amber-400">*</span>
                   </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
-                    className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm"
-                  />
+                  <div className="relative">
+                    <Phone className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 98765 43210"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                    <MapPin className="w-4 h-4 text-purple-400" />
-                    Business Address <span className="text-purple-400">*</span>
+                  <label className="block text-sm font-medium text-neutral-200 mb-2">
+                    Business Address <span className="text-amber-400">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="business_address"
-                    required
-                    value={formData.business_address}
-                    onChange={handleChange}
-                    placeholder="123 Tech Blvd, Suite 400, NY"
-                    className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm"
-                  />
+                  <div className="relative">
+                    <MapPin className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      name="business_address"
+                      required
+                      value={formData.business_address}
+                      onChange={handleChange}
+                      placeholder="Suite 502, Business Bay, Mumbai"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Primary Communication & Sales grid */}
+              {/* Grid 3: Communication Channel & Sales Benchmark */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                    <MessageSquare className="w-4 h-4 text-purple-400" />
-                    Primary Communication <span className="text-purple-400">*</span>
+                  <label className="block text-sm font-medium text-neutral-200 mb-2">
+                    Primary Medium of Communication <span className="text-amber-400">*</span>
                   </label>
-                  <select
-                    name="preferred_communication"
-                    value={formData.preferred_communication}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm cursor-pointer"
-                  >
-                    <option value="whatsapp" className="bg-neutral-900 text-white">WhatsApp</option>
-                    <option value="slack" className="bg-neutral-900 text-white">Slack</option>
-                    <option value="telegram" className="bg-neutral-900 text-white">Telegram</option>
-                  </select>
+                  <div className="relative">
+                    <MessageSquare className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <select
+                      name="preferred_communication"
+                      value={formData.preferred_communication}
+                      onChange={handleChange}
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm cursor-pointer"
+                    >
+                      <option value="whatsapp" className="bg-neutral-900 text-white">WhatsApp</option>
+                      <option value="slack" className="bg-neutral-900 text-white">Slack</option>
+                      <option value="telegram" className="bg-neutral-900 text-white">Telegram</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                    <TrendingUp className="w-4 h-4 text-purple-400" />
-                    Average Monthly Sales <span className="text-purple-400">*</span>
+                  <label className="block text-sm font-medium text-neutral-200 mb-2">
+                    Average Monthly Sales <span className="text-amber-400">*</span>
                   </label>
-                  <select
-                    name="avg_monthly_sales"
-                    value={formData.avg_monthly_sales}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm cursor-pointer"
-                  >
-                    {salesRanges.map((range) => (
-                      <option key={range} value={range} className="bg-neutral-900 text-white">
-                        {range}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <TrendingUp className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <select
+                      name="avg_monthly_sales"
+                      value={formData.avg_monthly_sales}
+                      onChange={handleChange}
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm cursor-pointer"
+                    >
+                      {salesRanges.map((range) => (
+                        <option key={range} value={range} className="bg-neutral-900 text-white">
+                          {range}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <span className="text-[11px] text-neutral-400 mt-1 block">Used to establish baseline marketing KPIs.</span>
                 </div>
               </div>
 
-              {/* Additional notes */}
+              {/* Field 4: Anything else */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-neutral-300 mb-2">
-                  <HelpCircle className="w-4 h-4 text-purple-400" />
-                  Anything else you'd like to share?
+                <label className="block text-sm font-medium text-neutral-200 mb-2">
+                  Anything else you want to share?
                 </label>
                 <textarea
                   name="additional_notes"
                   rows={4}
                   value={formData.additional_notes}
                   onChange={handleChange}
-                  placeholder="Share your goals, current bottlenecks, or team specifics..."
-                  className="w-full px-4 py-3 rounded-xl bg-neutral-800/60 border border-neutral-700/60 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all text-sm resize-none"
+                  placeholder="Share specific goals, past marketing results, or team instructions..."
+                  className="w-full p-4 rounded-xl bg-neutral-950 border border-neutral-700/80 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm resize-none"
                 />
               </div>
 
-              {/* Submit Button */}
+              {/* Submit CTA Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold flex items-center justify-center gap-2 shadow-lg shadow-purple-600/20 transition-all cursor-pointer disabled:opacity-50"
+                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 text-black font-bold flex items-center justify-center gap-2 shadow-xl shadow-amber-500/20 transition-all cursor-pointer disabled:opacity-50 text-base uppercase tracking-wider"
               >
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Submitting Onboarding Details...</span>
+                    <span>Saving Details...</span>
                   </>
                 ) : (
                   <>
-                    <span>Complete Onboarding</span>
+                    <span>Submit & Proceed</span>
                     <Send className="w-4 h-4" />
                   </>
                 )}
               </button>
+
+              <div className="flex items-center justify-center gap-2 text-xs text-neutral-400 pt-2">
+                <Lock className="w-3.5 h-3.5 text-amber-400" />
+                <span>Your information is end-to-end encrypted and saved securely.</span>
+              </div>
             </form>
+
+            {/* Trust Footer Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-4">
+              <div className="p-3 rounded-xl bg-neutral-900/40 border border-neutral-800">
+                <div className="text-amber-400 font-bold text-lg">100%</div>
+                <div className="text-xs text-neutral-400">Confidential</div>
+              </div>
+              <div className="p-3 rounded-xl bg-neutral-900/40 border border-neutral-800">
+                <div className="text-amber-400 font-bold text-lg">24h</div>
+                <div className="text-xs text-neutral-400">Team Contact</div>
+              </div>
+              <div className="p-3 rounded-xl bg-neutral-900/40 border border-neutral-800">
+                <div className="text-amber-400 font-bold text-lg">Supabase</div>
+                <div className="text-xs text-neutral-400">Backend Ready</div>
+              </div>
+              <div className="p-3 rounded-xl bg-neutral-900/40 border border-neutral-800">
+                <div className="text-amber-400 font-bold text-lg">AI</div>
+                <div className="text-xs text-neutral-400">Powered Strategy</div>
+              </div>
+            </div>
           </motion.div>
         ) : (
           <ThankYouCard
@@ -245,7 +329,7 @@ export const OnboardingSection: React.FC = () => {
                 email: '',
                 phone: '',
                 preferred_communication: 'whatsapp',
-                avg_monthly_sales: '$10,000 - $50,000',
+                avg_monthly_sales: '$10,000 - $50,000 / month',
                 additional_notes: '',
               });
             }}
@@ -255,3 +339,4 @@ export const OnboardingSection: React.FC = () => {
     </section>
   );
 };
+
