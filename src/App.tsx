@@ -18,14 +18,14 @@ function App() {
   }, []);
 
   return (
-    <main className="overflow-x-clip bg-[#0C0C0C]">
-      {/* View Switcher Header Bar */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-neutral-900/80 border border-neutral-800 backdrop-blur-xl shadow-2xl flex items-center gap-2 text-xs font-medium">
+    <main className="overflow-x-clip bg-[#0C0C0C] min-h-screen pt-16">
+      {/* Fixed View Switcher Navigation Pill */}
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 backdrop-blur-xl shadow-2xl flex items-center gap-1.5 text-xs font-medium">
         <button
           onClick={() => setCurrentView('onboarding')}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
             currentView === 'onboarding'
-              ? 'bg-purple-600 text-white shadow-md'
+              ? 'bg-amber-500 text-black font-semibold shadow-md'
               : 'text-neutral-400 hover:text-white'
           }`}
         >
@@ -37,19 +37,17 @@ function App() {
           onClick={() => setCurrentView('home')}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
             currentView === 'home'
-              ? 'bg-purple-600 text-white shadow-md'
+              ? 'bg-amber-500 text-black font-semibold shadow-md'
               : 'text-neutral-400 hover:text-white'
           }`}
         >
           <Home className="w-3.5 h-3.5" />
           <span>Main Homepage</span>
         </button>
-      </header>
+      </div>
 
       {currentView === 'onboarding' ? (
-        <div className="pt-8">
-          <OnboardingSection />
-        </div>
+        <OnboardingSection />
       ) : (
         <>
           <HeroSection />
@@ -64,4 +62,5 @@ function App() {
 }
 
 export default App;
+
 
