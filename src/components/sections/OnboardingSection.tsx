@@ -84,11 +84,11 @@ export const OnboardingSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen py-10 px-4 sm:px-6 lg:px-8 bg-[#09090c] text-neutral-100 font-sans selection:bg-amber-500 selection:text-black">
+    <section className="relative min-h-screen py-6 px-4 sm:px-6 lg:px-8 bg-[#09090c] text-neutral-100 font-sans selection:bg-amber-500 selection:text-black">
       {/* Background Gradients & Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-amber-500/10 via-yellow-600/5 to-transparent blur-[120px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         <AnimatePresence mode="wait">
           {!isSubmitted ? (
             <motion.div
@@ -171,7 +171,7 @@ export const OnboardingSection: React.FC = () => {
               )}
 
               {/* Main Form Body */}
-              <form onSubmit={handleSubmit} className="rounded-3xl bg-[#121216]/90 border border-neutral-800/80 p-6 sm:p-10 shadow-2xl space-y-8 backdrop-blur-xl">
+              <form onSubmit={handleSubmit} className="rounded-3xl bg-[#121216]/95 border border-neutral-800 p-6 sm:p-10 shadow-2xl space-y-8 backdrop-blur-xl">
 
                 {/* STEP 1: Contact Details */}
                 {activeStep === 1 && (
@@ -194,7 +194,7 @@ export const OnboardingSection: React.FC = () => {
                           Full Name <span className="text-amber-400">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <User className="w-4 h-4 text-amber-400 absolute left-3.5 pointer-events-none" />
+                          <User className="w-4 h-4 text-amber-400 absolute left-3.5 z-10 pointer-events-none" />
                           <input
                             type="text"
                             name="full_name"
@@ -202,7 +202,7 @@ export const OnboardingSection: React.FC = () => {
                             value={formData.full_name}
                             onChange={handleChange}
                             placeholder="e.g. Sarah Jenkins"
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950/90 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                            className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#0a0a0d] border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
                           />
                         </div>
                       </div>
@@ -212,7 +212,7 @@ export const OnboardingSection: React.FC = () => {
                           Email Address <span className="text-amber-400">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <Mail className="w-4 h-4 text-amber-400 absolute left-3.5 pointer-events-none" />
+                          <Mail className="w-4 h-4 text-amber-400 absolute left-3.5 z-10 pointer-events-none" />
                           <input
                             type="email"
                             name="email"
@@ -220,7 +220,7 @@ export const OnboardingSection: React.FC = () => {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder="sarah@company.com"
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950/90 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                            className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#0a0a0d] border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
                           />
                         </div>
                       </div>
@@ -232,7 +232,7 @@ export const OnboardingSection: React.FC = () => {
                           Phone Number <span className="text-amber-400">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <Phone className="w-4 h-4 text-amber-400 absolute left-3.5 pointer-events-none" />
+                          <Phone className="w-4 h-4 text-amber-400 absolute left-3.5 z-10 pointer-events-none" />
                           <input
                             type="tel"
                             name="phone"
@@ -240,7 +240,7 @@ export const OnboardingSection: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="+1 (555) 000-0000"
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950/90 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                            className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#0a0a0d] border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
                           />
                         </div>
                       </div>
@@ -250,7 +250,7 @@ export const OnboardingSection: React.FC = () => {
                           Business Address <span className="text-amber-400">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <MapPin className="w-4 h-4 text-amber-400 absolute left-3.5 pointer-events-none" />
+                          <MapPin className="w-4 h-4 text-amber-400 absolute left-3.5 z-10 pointer-events-none" />
                           <input
                             type="text"
                             name="business_address"
@@ -258,7 +258,7 @@ export const OnboardingSection: React.FC = () => {
                             value={formData.business_address}
                             onChange={handleChange}
                             placeholder="123 Tech Blvd, Suite 400, NY"
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950/90 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
+                            className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#0a0a0d] border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-400 transition-all text-sm"
                           />
                         </div>
                       </div>
