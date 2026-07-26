@@ -34,8 +34,7 @@ export async function submitOnboardingForm(formData: OnboardingData) {
           additional_notes: formData.additional_notes || '',
           created_at: new Date().toISOString(),
         },
-      ])
-      .select();
+      ]);
 
     if (error) {
       console.error('Supabase error:', error);
