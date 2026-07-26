@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Loader2 } from 'lucide-react';
-import { submitOnboardingForm, isSupabaseConfigured } from '../../lib/supabase';
+import { submitOnboardingForm } from '../../lib/supabase';
 import type { OnboardingData } from '../../lib/supabase';
 import { ThankYouCard } from './ThankYouCard';
 
@@ -90,11 +90,7 @@ export const OnboardingSection: React.FC = () => {
                   </p>
                 </div>
 
-                {!isSupabaseConfigured && (
-                  <div className="p-3 text-xs rounded-lg bg-[#FFCC00]/10 border border-[#FFCC00]/20 text-[#FFCC00] text-center">
-                    ℹ️ Demo Mode: Connected with local fallback logic (Supabase env vars can be added in `.env.local`).
-                  </div>
-                )}
+
 
                 {errorMessage && (
                   <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm text-center">
