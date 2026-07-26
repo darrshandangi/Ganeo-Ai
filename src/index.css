@@ -1,24 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import "tailwindcss";
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html, body, #root {
-  background-color: #0C0C0C;
-  font-family: 'Kanit', sans-serif;
-  color: #D7E2EA;
+  background-color: #0A0A0A;
+  font-family: 'Inter', sans-serif;
+  color: #FFFFFF;
 }
 
-.hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.form-glow:focus-within {
+  box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.2);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFCC00 0%, #FFAA00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent; /* Fallback */
+}
+
+.glass-card {
+  background: rgba(19, 19, 19, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-gold {
+  background: #FFCC00;
+  color: #000000;
+  box-shadow: 0 4px 14px 0 rgba(255, 204, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: #FFD633;
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+  transform: translateY(-1px);
 }
 
 /* Chrome / Edge / Safari Autofill Override to preserve dark luxury UI */
