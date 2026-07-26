@@ -1,19 +1,7 @@
-import { HeroSection } from './components/sections/HeroSection';
-import { MarqueeSection } from './components/sections/MarqueeSection';
-import { AboutSection } from './components/sections/AboutSection';
-import { ServicesSection } from './components/sections/ServicesSection';
-import { ProjectsSection } from './components/sections/ProjectsSection';
+import { OnboardingSection } from './components/sections/OnboardingSection';
 
 function App() {
-  return (
-    <main className="overflow-x-clip bg-[#0A0A0A] min-h-screen">
-      <HeroSection />
-      <MarqueeSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-    </main>
-  );
+  return <OnboardingSection />;
 }
 
 export default App;

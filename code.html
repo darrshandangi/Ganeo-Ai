@@ -1,0 +1,244 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Customer Onboarding | Ganeo AI</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#FFCC00",
+                    "on-primary": "#000000",
+                    "background": "#0A0A0A",
+                    "surface": "#131313",
+                    "surface-variant": "#1C1B1B",
+                    "outline": "#3a3939",
+                    "outline-variant": "#2a2929",
+                    "on-surface": "#FFFFFF",
+                    "on-surface-variant": "#A0A0A0",
+                    "secondary": "#A0A0A0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "stack-lg": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter", "sans-serif"],
+                    "label-md": ["Sora", "sans-serif"],
+                    "label-sm": ["Sora", "sans-serif"],
+                    "display": ["Sora", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-lg": ["Sora", "sans-serif"],
+                    "headline-md": ["Sora", "sans-serif"],
+                    "display-mobile": ["Sora", "sans-serif"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-glow:focus-within {
+            box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.2);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFCC00 0%, #FFAA00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(19, 19, 19, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .btn-gold {
+            background: #FFCC00;
+            color: #000000;
+            box-shadow: 0 4px 14px 0 rgba(255, 204, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background: #FFD633;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-md w-full top-0 sticky z-50 border-b border-white/5">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display text-headline-md font-extrabold gold-gradient-text cursor-pointer tracking-tight">
+            Ganeo AI
+        </div>
+<div class="flex items-center">
+<button class="px-6 py-2 rounded-lg border border-primary/30 text-primary font-label-md hover:bg-primary/10 transition-all">
+                Sign In
+            </button>
+</div>
+</div>
+</header>
+<main class="min-h-[calc(100vh-160px)] flex flex-col items-center justify-center py-stack-lg relative overflow-hidden">
+<!-- Futuristic Ambient Background -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[600px] pointer-events-none opacity-10 blur-[140px] bg-gradient-to-b from-primary/40 to-transparent"></div>
+<!-- Onboarding Progress Indicator -->
+<!-- Form Card Container -->
+<section class="w-full max-w-[640px] px-margin-mobile">
+<div class="glass-card p-stack-lg rounded-xl shadow-2xl transition-all duration-300">
+<div class="mb-stack-lg text-center md:text-left">
+<h1 class="font-display text-headline-lg text-on-surface mb-2 tracking-tight font-bold">Customer Onboarding</h1>
+<p class="font-body-md text-secondary">Complete your profile to unlock Ganeo's high-performance AI engine for your business.</p><p class="font-body-md text-primary mt-2 font-semibold">We provide 3D websites and AI automation to small Businesses.</p>
+</div>
+<form class="space-y-6" id="onboardingForm">
+<!-- Row: Full Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface font-semibold" for="fullName">Full Name</label>
+<div class="relative form-glow">
+<input class="w-full h-[48px] px-4 rounded-lg bg-white/5 border-white/10 text-white focus:border-primary focus:ring-0 transition-all placeholder:text-white/20" id="fullName" name="fullName" placeholder="e.g. Alexander Hamilton" required="" type="text">
+</div>
+</div>
+<!-- Row: Business Address -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface font-semibold" for="address">Business Address</label>
+<div class="relative form-glow">
+<input class="w-full h-[48px] px-4 rounded-lg bg-white/5 border-white/10 text-white focus:border-primary focus:ring-0 transition-all placeholder:text-white/20" id="address" name="address" placeholder="123 Corporate Way, Suite 500, New York, NY" required="" type="text">
+</div>
+</div>
+<!-- Row: Email & Phone Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface font-semibold" for="email">Work Email</label>
+<div class="relative form-glow">
+<input class="w-full h-[48px] px-4 rounded-lg bg-white/5 border-white/10 text-white focus:border-primary focus:ring-0 transition-all placeholder:text-white/20" id="email" name="email" placeholder="alex@company.com" required="" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface font-semibold" for="phone">Phone Number</label>
+<div class="relative form-glow">
+<input class="w-full h-[48px] px-4 rounded-lg bg-white/5 border-white/10 text-white focus:border-primary focus:ring-0 transition-all placeholder:text-white/20" id="phone" name="phone" placeholder="+1 (555) 000-0000" required="" type="tel">
+</div>
+</div>
+</div>
+<!-- Row: Comms Method & Sales -->
+<div class="grid grid-cols-1 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface font-semibold" for="comms">Primary Communication</label>
+<div class="relative form-glow">
+<select class="w-full h-[48px] px-4 rounded-lg bg-white/5 border-white/10 text-white focus:border-primary focus:ring-0 transition-all appearance-none" id="comms" name="comms" required="">
+<option class="bg-surface" disabled="" selected="" value="">Select a platform</option>
+<option class="bg-surface" value="WhatsApp">WhatsApp</option>
+<option class="bg-surface" value="Slack">Slack</option>
+<option class="bg-surface" value="Telegram">Telegram</option>
+</select>
+</div>
+</div>
+
+</div>
+<!-- Row: Additional Information -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface font-semibold" for="additional">Additional Information</label>
+<div class="relative form-glow">
+<textarea class="w-full p-4 rounded-lg bg-white/5 border-white/10 text-white focus:border-primary focus:ring-0 transition-all placeholder:text-white/20 resize-none" id="additional" name="additional" placeholder="Any specific AI implementation goals?" rows="4"></textarea>
+</div>
+<span class="font-label-sm text-secondary/70 italic">Tell our engineering team about your specific needs.</span>
+</div>
+<!-- Submission Action -->
+<div class="pt-4">
+<button class="w-full h-[56px] btn-gold font-display font-bold rounded-lg transition-all flex items-center justify-center gap-2 group text-on-primary" type="submit">
+<span class="uppercase tracking-wider">Submit Details</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="mt-stack-lg pt-stack-md border-t border-white/5 flex items-center justify-center gap-stack-sm opacity-50">
+<span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>
+<p class="font-label-sm uppercase tracking-tighter">Enterprise-grade 256-bit AES encryption active</p>
+</div>
+</div>
+</section>
+<!-- Trust Badges -->
+
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-stack-lg border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-stack-md">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<div class="font-display text-headline-md font-extrabold gold-gradient-text tracking-tighter">
+                Ganeo AI
+            </div>
+<p class="text-secondary font-label-sm text-label-sm">
+                © 2024 Ganeo AI Technologies. Powering the next generation of enterprise.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-lg">
+<a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Terms</a>
+<a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Support</a>
+<a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Status</a>
+</div>
+</div>
+</footer>
+<script>
+    // Form submission handling with themed feedback
+    document.getElementById('onboardingForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        const originalContent = btn.innerHTML;
+        
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span><span class="uppercase tracking-wider">Deploying...</span>';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+
+        setTimeout(() => {
+            btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span><span class="uppercase tracking-wider">Success</span>';
+            btn.style.background = '#10B981'; // Green for success
+            btn.style.color = '#FFFFFF';
+            btn.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.4)';
+            
+            setTimeout(() => {
+                alert('Success! Ganeo AI engine is being initialized for your workspace.');
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                btn.style.background = '#FFCC00';
+                btn.style.color = '#000000';
+                btn.style.boxShadow = '0 4px 14px 0 rgba(255, 204, 0, 0.3)';
+                e.target.reset();
+            }, 1500);
+        }, 2000);
+    });
+</script>
+
+
+</body></html>
