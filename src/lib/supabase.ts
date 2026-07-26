@@ -18,13 +18,15 @@ export interface OnboardingData {
 }
 
 export async function submitOnboardingForm(formData: OnboardingData) {
-  const url = `${supabaseUrl}/rest/v1/onboarding_submissions`;
+  const url = 'https://qvjjuqgsrtpguatenurm.supabase.co/rest/v1/onboarding_submissions';
+  const apiKey = 'sb_publishable_UwLbTr_InLtYUmX74un_Vw_skeGWmy-';
+
   const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'apikey': supabaseAnonKey,
-      'Authorization': `Bearer ${supabaseAnonKey}`,
+      'apikey': apiKey,
+      'Authorization': `Bearer ${apiKey}`,
       'Prefer': 'return=minimal',
     },
     body: JSON.stringify({
